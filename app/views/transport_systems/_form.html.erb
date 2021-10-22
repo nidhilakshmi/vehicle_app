@@ -1,0 +1,27 @@
+<%= form_with(model: transport_system) do |form| %>
+  <% if transport_system.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transport_system.errors.count, "error") %> prohibited this transport_system from being saved:</h2>
+
+      <ul>
+        <% transport_system.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.number_field :model %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
